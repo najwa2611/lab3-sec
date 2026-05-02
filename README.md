@@ -17,7 +17,6 @@ Cette application permet de comprendre :
 
 ### Configuration
 
-```bash
 git clone https://github.com/aishide/Burp_suit_test_website.git
 cd Burp_suit_test_website
 npm install
@@ -25,53 +24,46 @@ npm start
 
 Le serveur démarre sur http://localhost:3000
 
-Vulnérabilités intégrées
-Vulnérabilité	Description
-Injection SQL	Contournement de l'authentification
-Absence de limite	Attaques par force brute possibles
-Communication non sécurisée	Pas de HTTPS, identifiants en clair
-Absence de validation	Entrées utilisateur non filtrées
+### Vulnérabilités intégrées
+Vulnérabilité     	                Description
+Injection SQL	                      Contournement de l'authentification
+Absence de limite	                  Attaques par force brute possibles
+Communication non sécurisée	        Pas de HTTPS, identifiants en clair
+Absence de validation	              Entrées utilisateur non filtrées
 
 
-Test avec Burp Suite
+### Test avec Burp Suite
 Configuration
+
 Configurer le proxy Burp Suite (127.0.0.1:8080)
-
 Configurer le navigateur sur le proxy Burp
-
 Activer l'interception
 
-Scénarios de test
+### Scénarios de test
 Connexion normale
 
 Nom d'utilisateur : admin
-
 Mot de passe : admin123
 
-Injection SQL
+### Injection SQL
 
 Nom d'utilisateur : admin' --
-
 Mot de passe : n'importe quoi
 
-Manipulation des paramètres
+### Manipulation des paramètres
 
 Intercepter la requête de connexion
-
 Modifier les paramètres
-
 Transmettre la requête modifiée
 
-Éléments à observer dans Burp
+### Éléments à observer dans Burp
+
 Requête brute (Raw)
-
 Paramètres dans le corps POST
-
 En-têtes HTTP
-
 Réponse du serveur
 
-Structure
+### Structure
 text
 Burp_suit_test_website/
 ├── server.js
@@ -82,5 +74,5 @@ Burp_suit_test_website/
 │   └── style.css
 └── README.md
 
-Avertissement
+### Avertissement
 Cette application est volontairement vulnérable. Ne pas déployer en production ou sur Internet.
